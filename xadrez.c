@@ -3,9 +3,10 @@
 #define Bispo 5
 #define Torre 5
 #define Rainha 8
+#define Cavalo_Vertical 2
+#define Cavalo_Horizontal 1
 // Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+
 
 int main() {
     // Movimentação das peças
@@ -27,6 +28,20 @@ int main() {
     {
         printf("Esquerda\n");
     }
+
+        printf(" Movimentação Cavalo\n");
+    for (int i = 0; i < Cavalo_Vertical; i++)
+    {
+        printf("Baixo\n");
+    }
+
+    int movimentos_horizontais = 0;
+    while (movimentos_horizontais < Cavalo_Horizontal)
+    {
+        printf("Esquerda\n");
+        movimentos_horizontais++;
+    }
+    
 
     return 0;
 }
