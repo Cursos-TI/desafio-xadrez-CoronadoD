@@ -1,47 +1,51 @@
 #include <stdio.h>
 
-#define Bispo 5
-#define Torre 5
-#define Rainha 8
-#define Cavalo_Vertical 2
-#define Cavalo_Horizontal 1
-// Desafio de Xadrez - MateCheck
+#define BISPO 5
+#define TORRE 5
+#define RAINHA 8
+#define CAVALO_VERTICAL 2
+#define CAVALO_HORIZONTAL 1
 
+// Funções recursivas para movimentação das peças
+void moverBispo(int passos) {
+    if (passos == 0) return;
+    printf("Diagonal Direita Cima\n");
+    moverBispo(passos - 1);
+}
 
-int main() {
-    // Movimentação das peças
-    printf("Movimenteção do Bispo\n");
+void moverTorre(int passos) {
+    if (passos == 0) return;
+    printf("Direita\n");
+    moverTorre(passos - 1);
+}
 
-    for (int i = 0; i < Bispo; i++)
-    {
-        printf("Cima-Direita\n");
-    }
-    
-    printf(" Movimentação da Torre\n");
-    for (int i = 0; i < Torre; i++)
-    {
-        printf("Direita\n");
-    }
-    
-        printf(" Movimentação da Rainha\n");
-    for (int i = 0; i < Rainha; i++)
-    {
-        printf("Esquerda\n");
-    }
+void moverRainha(int passos) {
+    if (passos == 0) return;
+    printf("Esquerda\n");
+    moverRainha(passos - 1);
+}
 
-        printf(" Movimentação Cavalo\n");
-    for (int i = 0; i < Cavalo_Vertical; i++)
-    {
+void moverCavalo() {
+    for (int i = 0; i < CAVALO_VERTICAL; i++) {
         printf("Baixo\n");
     }
-
-    int movimentos_horizontais = 0;
-    while (movimentos_horizontais < Cavalo_Horizontal)
-    {
+    for (int i = 0; i < CAVALO_HORIZONTAL; i++) {
         printf("Esquerda\n");
-        movimentos_horizontais++;
     }
-    
+}
 
+int main() {
+    printf("Movimentação do Bispo:\n");
+    moverBispo(BISPO);
+    
+    printf("\nMovimentação da Torre:\n");
+    moverTorre(TORRE);
+    
+    printf("\nMovimentação da Rainha:\n");
+    moverRainha(RAINHA);
+    
+    printf("\nMovimentação do Cavalo:\n");
+    moverCavalo();
+    
     return 0;
 }
